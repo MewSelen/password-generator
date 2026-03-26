@@ -54,7 +54,7 @@
 
   <script>
     function generatePassword() {
-      const length = document.getElementById("length").value;
+      const length = parseInt(document.getElementById("length").value);
       const upper = document.getElementById("upper").checked;
       const lower = document.getElementById("lower").checked;
       const numbers = document.getElementById("numbers").checked;
@@ -64,4 +64,10 @@
       if (upper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       if (lower) chars += "abcdefghijklmnopqrstuvwxyz";
       if (numbers) chars += "0123456789";
-      if (symbols) chars += "!@#$%^&
+      if (symbols) chars += "!@#$%^&*()_+";
+      let password = "";
+for (let i = 0; i < length; i++) {
+  password += chars.charAt(Math.floor(Math.random() * chars.length));
+}
+
+document.getElementById("result").innerText = password;
