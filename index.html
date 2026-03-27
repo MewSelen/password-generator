@@ -95,12 +95,28 @@
       .box { padding: 20px; }
       h2 { font-size: 1.5em; }
     }
+    .header {
+  display: flex;
+  align-items: center;
+ justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.logopass {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
   </style>
 </head>
 <body>
 
   <div class="box">
-    <h2>🔐 Generador de Contraseñas Pro</h2>
+   <div class="header">
+  <img src="logopass.png" class="logopass">
+  <h2>Generador de Contraseñas</h2>
+</div>
 
     <label>Largo:</label>
     <input type="number" id="length" value="12" min="4" max="30"><br><br>
